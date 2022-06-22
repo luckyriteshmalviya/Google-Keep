@@ -3,8 +3,8 @@ This is very helpful for creating, editing and saving notes, important links and
 In this Project we tried to make the UI similar to the Google Keep UI.  
   
 Our Project Requirement mainly focus on three task:-      
-Task 01 - A smooth functioning sliding menu on the left side in a Ham-burger Menu style.  
-Task 02 - A switch which on the right side to change the theme of page with varities of colors.  
+Task 01 - A smooth functioning sliding menu on the left side in a Ham-burger Menu style from which user cn  get access to different options  
+Task 02 - A switch which on the right side to change the theme of page with varities of themes.  
 Task 03 - The main feature of this appplication is to provide a facility to the user to save the notes, links and texts. So, to achieve this we can    
           create model boxes which stores the data in the local storage.
           
