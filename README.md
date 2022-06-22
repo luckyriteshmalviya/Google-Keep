@@ -2,18 +2,32 @@
 This is very helpful for creating, editing and saving notes, important links and important text for future references.  
 In this Project we tried to make the UI similar to the Google Keep UI.  
   
+  
+  ## Versions
+  
+  ### Version 1:-  
+  - The user should be able to create a new file as a note.  
+  - user should be able to add text to the note.  
+  - user should be able to save this note for future references.  
+  - user should access any file that he/she saved in past.  
+  - user should be able to edit the existing file.  
     
-Our Project Requirement mainly focus on three task:-      
-  
-- Task 01 - A smooth functioning sliding menu on the left side in a Ham-burger Menu style from which user cn  get access to different options  
-  
-- Task 02 - A switch which on the right side to change the theme of page with varities of themes.  
-  
-- Task 03 - The main feature of this appplication is to provide a facility to the user to save the notes, links and texts. So, to achieve this we can    
-          create model boxes which stores the data in the local storage.
-          
-            
-              
+  ### Version 2:-   
+  - user can add labels or tags.  
+  - user can delete the file.  
+  - user can add checkboxes as a style of input.  
+  - user can change the theme of UI.    
+  - user can attach any kind of document like pdf, jpg, png, etc. 
+
+  ### Version 3:-
+  - user can add audio & Video.    
+  - user can categorized their file into different folders.    
+  - user can access the drawing tool like pencil and eraser.    
+  - user can set reminders for some specific files.    
+  - user can access all the data from any device.  
+
+
+
 
 ## Here is the real UI of Google Keep
 ![WhatsApp Image 2022-05-09 at 2 42 27 PM](https://user-images.githubusercontent.com/99033374/167378869-7ca49446-4757-4a03-92ee-de7b06feb50b.jpeg)
@@ -35,7 +49,7 @@ Our Project Requirement mainly focus on three task:-
        
 ## Here is my project UI
 
-![WhatsApp Image 2022-05-09 at 3 05 10 PM](https://user-images.githubusercontent.com/99033374/167383029-8e8d0866-c55a-4dd3-b5e7-48cd4b794058.jpeg)
+![WhatsApp Image 2022-06-22 at 1 36 16 AM](https://user-images.githubusercontent.com/99033374/174888419-5ccf4f68-00cd-4c1f-b853-4840e4083bf8.jpeg)
 
   
     
@@ -43,7 +57,6 @@ Our Project Requirement mainly focus on three task:-
   
 ## Demo  
 
-![WhatsApp Image 2022-06-22 at 1 36 16 AM](https://user-images.githubusercontent.com/99033374/174888419-5ccf4f68-00cd-4c1f-b853-4840e4083bf8.jpeg)
 
 
 https://user-images.githubusercontent.com/99033374/167382116-9713964e-85ef-4382-b43a-ec45bbd720e8.mp4
