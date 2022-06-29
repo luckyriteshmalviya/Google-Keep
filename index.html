@@ -12,6 +12,10 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Roboto:wght@300;400&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="main">
@@ -19,20 +23,10 @@
         <div class="header-left-section">
           <div class="first-part">
             <div id="menu-bar">
-              <div id="menu" onclick="onClickMenu()">
+              <div id="menu" class="close" onclick="onClickMenu() ">
                 <div class="bar" id="bar-1"></div>
                 <div class="bar" id="bar-2"></div>
                 <div class="bar" id="bar-3"></div>
-
-                <ul class="nav" id="nav">
-                  <li><div class="list_items">Notes</div></li>
-                  <li><div class="list_items">Remainders</div></li>
-                  <li><div class="list_items">Inspiration</div></li>
-                  <li><div class="list_items">Personal</div></li>
-                  <li><div class="list_items">Edit Labels</div></li>
-                  <li><div class="list_items">Archive</div></li>
-                  <li><div class="list_items">Trash</div></li>
-                </ul>
               </div>
             </div>
           </div>
@@ -51,115 +45,220 @@
         <div class="header-center-section">
           <div class="search-bar">
             <img class="search-ic" src="assets/images/search-ic.webp" />
-            <input class="search" type="text" placeholder="Search" />
+            <input class="search" placeholder="Search" />
           </div>
         </div>
 
         <div class="header-right-section">
           <div class="right-menu-first">
-            <div>REFRESH</div>
-            <div>LIST VIEW</div>
-            <div>Settings</div>
+            <div id="themes" class="themes" onclick="theme()">
+              <i class="bx bxs-moon"></i>
+            </div>
           </div>
 
-          <div class="right-menu-second">
-            <div>google apps</div>
-            <div>google accounts</div>
+          <div class="themes_section">
+            <ul>
+              <li>Black</li>
+              <li>Yellow</li>
+              <li>Red</li>
+              <li>Blue</li>
+            </ul>
           </div>
+          <div>google apps</div>
+          <div>google accounts</div>
         </div>
       </div>
 
       <div class="main-container">
-        <div class="types">
-          <div class="types_heading">Types</div>
-          <div class="types_content">
-            <div id="checklist" onclick="onClickChecklist()">
-              <button class="types_items">
-                <div>
-                  <img class="list-ic" src="assets/images/list-ic.png" />
-                </div>
-                <div class="list">Lists</div>
-              </button>
-
-              <div class="checklist-content">
-                <div class="checklist-header">Title</div>
-                <div>
-                  <form>
-                    <input type="checkbox" /><input
-                      class="text"
-                      type="text"
-                      placeholder="Enter text here...."
-                    />
-                    <br />
-                    <input type="checkbox" /><input class="text" type="text" />
-                    <br />
-                    <input type="checkbox" /><input class="text" type="text" />
-                    <br />
-                    <input type="checkbox" /><input class="text" type="text" />
-
-                    <br />
-                  </form>
-                </div>
+        <div class="nav" id="nav">
+          <ul id="side-bar">
+            <li>
+              <div class="list_items">
+                <span class="slide-ic"><i class="bx bx-bulb"></i></span>
+                <span class="slide-text" onclick="notes()">Notes</span>
               </div>
+            </li>
+            <li>
+              <div class="list_items">
+                <span class="slide-ic"><i class="bx bx-bulb"></i></span>
+                <span class="slide-text">Remainders</span>
+              </div>
+            </li>
+            <li>
+              <div class="list_items">
+                <span class="slide-ic"><i class="bx bx-label"></i></span>
+                <span class="slide-text">Inspiration</span>
+              </div>
+            </li>
+            <li>
+              <div class="list_items">
+                <span class="slide-ic"><i class="bx bx-label"></i></span>
+                <span class="slide-text">Personal</span>
+              </div>
+            </li>
+            <li>
+              <div class="list_items">
+                <span class="slide-ic"><i class="bx bx-edit-alt"></i></span
+                ><span class="slide-text">Edit Labels</span>
+              </div>
+            </li>
+            <li>
+              <div class="list_items">
+                <span class="slide-ic"><i class="bx bx-archive-in"></i></span>
+                <span class="slide-text">Archive</span>
+              </div>
+            </li>
+            <li>
+              <div class="list_items">
+                <span class="slide-ic"><i class="bx bx-trash"></i></span>
+                <span class="slide-text">Trash</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="form" id="form">
+            <div>
+              <input
+                type="text"
+                class="notes_title"
+                id="notes_title"
+                placeholder="Title"
+                style="font-size: 1.6rem"
+              />
             </div>
 
-            <button class="types_items">
-              <div>
-                <img class="list-ic" src="assets/images/image-ic.png" />
+            <div>
+              <textarea
+                placeholder="Description..."
+                class="notes_description"
+                id="notes_description"
+                style="font-size: 1.2rem"
+              ></textarea>
+            </div>
+            <div class="notes-option">
+              <div id="savedNotesIcon">
+                <p><i class="bx bxs-bell-plus"></i></p>
+                <p><i class="bx bx-user-plus"></i></p>
+                <p><i class="bx bx-image-alt"></i></p>
+                <p><i class="bx bx-archive-in"></i></p>
+                <p><i class="bx bx-palette"></i></p>
+                <p><i class="bx bx-dots-vertical-rounded"></i></p>
+                <p><i class="bx bx-undo"></i></p>
+                <p><i class="bx bx-redo"></i></p>
               </div>
-              <div class="list">Images</div>
-            </button>
+              <button class="save_notes" onclick="saveNote(), notes()">
+                Save
+              </button>
+            </div>
+          </div>
 
-            <button class="types_items">
-              <div>
-                <img class="list-ic" src="assets/images/drawings-ic.png" />
-              </div>
-              <div class="list">Drawings</div>
-            </button>
-
-            <button class="types_items">
-              <div>
-                <img class="list-ic" src="assets/images/url-ic.jpg" />
-              </div>
-              <div class="list">Urls</div>
-            </button>
+          <div id="savedNotes">
+            <!-- Notes
+            <div>
+              <textarea id="savedNotesTitle" placeholder="Title"></textarea>
+            </div>
+            <div>
+              <textarea
+                id="savedNotesDescription"
+                placeholder="Description..."
+              ></textarea>
+            </div> -->
           </div>
         </div>
 
-        <div class="labels">
-          <div class="labels_heading">Labels</div>
+        <!-- Types , Labels and colors are not displayed for sometime  -->
+        <!--- <div>
+          <div class="types">
+            <div class="types_heading">Types</div>
+            <div class="types_content">
+              <div id="checklist" onclick="onClickChecklist()">
+                <button class="types_items">
+                  <div>
+                    <img class="list-ic" src="assets/images/list-ic.png" />
+                  </div>
+                  <div class="list">Lists</div>
+                </button>
 
-          <div>
-            <button class="label_items">
-              <div>
-                <img class="work-ic" src="assets/images/work-ic.png" />
+                <div class="checklist-content">
+                  <div class="checklist-header">Title</div>
+                  <div>
+                    <form>
+                      <input type="checkbox" /><input
+                        class="text"
+                        type="text"
+                        placeholder="Enter text here...."
+                      />
+                      <br />
+                      <input type="checkbox" /><input
+                        class="text"
+                        type="text"
+                      />
+                      <br />
+                      <input type="checkbox" /><input
+                        class="text"
+                        type="text"
+                      />
+                      <br />
+                      <input type="checkbox" /><input
+                        class="text"
+                        type="text"
+                      />
+
+                      <br />
+                    </form>
+                  </div>
+                </div>
               </div>
-              <div class="work">Work</div>
-            </button>
-          </div>
-        </div>
 
-        <div class="color">
-          <div class="color-heading">Colors</div>
-          <div class="color-content">
-            <button class="color-items" id="first-color"></button>
-            <button class="color-items" id="second-color"></button>
+              <button class="types_items">
+                <div>
+                  <img class="list-ic" src="assets/images/image-ic.png" />
+                </div>
+                <div class="list">Images</div>
+              </button>
+
+              <button class="types_items">
+                <div>
+                  <img class="list-ic" src="assets/images/drawings-ic.png" />
+                </div>
+                <div class="list">Drawings</div>
+              </button>
+
+              <button class="types_items">
+                <div>
+                  <img class="list-ic" src="assets/images/url-ic.jpg" />
+                </div>
+                <div class="list">Urls</div>
+              </button>
+            </div>
+          </div>
+
+          <div class="labels">
+            <div class="labels_heading">Labels</div>
+
+            <div>
+              <button class="label_items">
+                <div>
+                  <img class="work-ic" src="assets/images/work-ic.png" />
+                </div>
+                <div class="work">Work</div>
+              </button>
+            </div>
+          </div>
+
+          <div class="color">
+            <div class="color-heading">Colors</div>
+            <div class="color-content">
+              <button class="color-items" id="first-color"></button>
+              <button class="color-items" id="second-color"></button>
+            </div>
           </div>
         </div>
-      </div>
+      --></div>
     </div>
 
-    <script type="text/javascript">
-
-      (()=>{alert("Welcome to the Google keep created by Ritesh malviya")})();
-      
-      function onClickMenu() {
-        document.getElementById("menu").classList.toggle("change");
-      }
-
-      function onClickChecklist() {
-        document.getElementById("checklist").classList.toggle("effect");
-      }
-    </script>
+    <script type="text/javascript" src="assets/javascript/main.js"></script>
   </body>
 </html>
