@@ -92,10 +92,15 @@ function saveNote() {
  */
 
 function notes() {
-  const notesList = JSON.parse(localStorage.getItem("notes")) || [];
   const notesContainer = document.getElementById("savedNotes");
+  notesContainer.innerHTML = null;
+  const notesList = JSON.parse(localStorage.getItem("notes")) || [];
   const fragmentContainer = document.createDocumentFragment();
-  for (let i = 0; i < notesList.length; i++) {
+  const notesLength = notesList.length - 1;
+  console.log(notesList);
+  console.log(notesLength);
+  for (let i = notesLength; i >= 0; i--) {
+    console.log(notesList[0]);
     const { title, description } = notesList[i];
     const divContainer = document.createElement("div");
     divContainer.innerHTML = `<div class="savedNotes">
@@ -104,6 +109,7 @@ function notes() {
     <i class='bx bx-pin' ></i>
     </div>
     <textarea id="savedNotesDescription">${description}</textarea>
+    <div class="SavedNotesThirdSection">
     <div id="savedNotesIcon">
     <p><i class='bx bxs-bell-plus' ></i></p>
     <p><i class='bx bx-user-plus' ></i> </p>
@@ -113,6 +119,8 @@ function notes() {
     <p><i class='bx bx-dots-vertical-rounded' ></i> </p>
     <p><i class='bx bx-undo' ></i>  </p>
     <p><i class='bx bx-redo' ></i></p>
+    </div>
+    <button class="editBtn" onClick="editNotes()">EDIT NOTE</button>
     </div>
     </div>`;
     fragmentContainer.appendChild(divContainer);
