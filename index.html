@@ -23,12 +23,14 @@
     <!--CSS stylesheets-->
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/header.css" />
-    <link rel="stylesheet" href="assets/css/forNote.css" />
+    <link rel="stylesheet" href="assets/css/noteSection.css" />
     <link rel="stylesheet" href="assets/css/typesLabelsAndColors.css" />
   </head>
+
   <body>
     <!-- main element -->
     <div class="main">
+      <!--Header Starts here-->
       <div class="header">
         <div class="header-left-section">
           <div class="first-part">
@@ -78,14 +80,17 @@
           <div>google accounts</div>
         </div>
       </div>
+      <!--Header Ends here-->
 
+      <!--Main-Continer starts here-->
       <div class="main-container">
+        <!--Slide Menu Starts here-->
         <div class="nav" id="nav">
           <ul id="side-bar">
             <li>
               <div class="list_items">
                 <span class="slide-ic"><i class="bx bx-bulb"></i></span>
-                <span class="slide-text" onclick="notes()">Notes</span>
+                <span class="slide-text" onclick="displayNotes()">Notes</span>
               </div>
             </li>
             <li>
@@ -126,7 +131,9 @@
             </li>
           </ul>
         </div>
+        <!--Slide Menu ends here-->
 
+        <!--Notes section starts here-->
         <div>
           <div class="form" id="form">
             <div>
@@ -135,7 +142,6 @@
                 class="notes_title"
                 id="notes_title"
                 placeholder="Title"
-                style="font-size: 1.6rem"
               />
             </div>
 
@@ -144,7 +150,6 @@
                 placeholder="Description..."
                 class="notes_description"
                 id="notes_description"
-                style="font-size: 1.2rem"
               ></textarea>
             </div>
             <div class="notes-option">
@@ -158,7 +163,7 @@
                 <p><i class="bx bx-undo"></i></p>
                 <p><i class="bx bx-redo"></i></p>
               </div>
-              <button class="save_notes" onclick="saveNote(), notes()">
+              <button class="save_notes" onclick="saveNote(), displayNotes()">
                 Save
               </button>
             </div>
@@ -167,18 +172,14 @@
           <div id="savedNotes">
             <!-- Notes
             <div>
-              <textarea id="savedNotesTitle" placeholder="Title"></textarea>
-            </div>
-            <div>
-              <textarea
-                id="savedNotesDescription"
-                placeholder="Description..."
-              ></textarea>
+              
             </div> -->
           </div>
+          <div id="editNote"></div>
         </div>
+        <!--Notes section ends here-->
 
-        <!-- Types , Labels and colors are not displayed for sometime  -->
+        <!-- Types , Labels and colors are not displayed for future use  -->
         <!--- <div>
           <div class="types">
             <div class="types_heading">Types</div>
@@ -267,8 +268,9 @@
           </div>
         </div>
       --></div>
+      <!--Main Container ends here-->
     </div>
 
-    <script type="text/javascript" src="assets/javascript/main.js"></script>
+    <script src="assets/javascript/main.js"></script>
   </body>
 </html>

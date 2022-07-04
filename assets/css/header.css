@@ -3,7 +3,7 @@
   justify-content: space-between;
   padding: 0px 2px 2px 2px;
   border-bottom: 1px solid rgb(196, 196, 196);
-  margin-top: 1rem;
+  margin-top: 0.4rem;
 }
 
 .header-left-section {
@@ -36,28 +36,15 @@
   transition: 0.7s ease;
 }
 
-/* .aside {
-    width: 20rem;
-    background-color: #fbbc04; 
-  } */
-
-/* .change .aside {
-    width: 5rem;
-  } */
-
 .slide .nav {
   background-color: aqua;
   width: 0px;
 }
 
 .nav {
-  /* display: none; */
   list-style: none;
-
   width: 20rem;
   margin-left: -3.5rem;
-  /* padding-left: -5rem; */
-  /* background-color: #1a73e8; */
 }
 
 #bar-1 {
@@ -84,30 +71,11 @@
   background-color: rgb(138, 138, 138);
 }
 
-/* .change .nav {
-    display: flex; 
-    width: 20%;
-    flex-direction: column;
-    align-items: baseline;
-    margin: -4.8rem;
-    height: 30rem;
-    padding-top: 18px;
-    margin-top: 16px;
-    font-size: 1.48rem;
-    font-weight: bolder;
-    position: absolute;
-    z-index: 1000;
-  } */
-
-/* #nav {
-    color: black;
-  } */
-
 .list_items {
   width: 20rem;
   border-top-right-radius: 2.2rem;
   border-bottom-right-radius: 2.2rem;
-  padding-left: 2rem;
+  padding-left: 2.6rem;
   height: 4rem;
   display: flex;
   align-items: center;
@@ -134,15 +102,7 @@
   width: 3rem;
   margin-left: 1.6rem;
   border-radius: 50%;
-  padding-left: 1.3rem;
-  /* background-color: #feefc3; 
-    height: 4rem;
-    display: flex;
-    align-items: center;
-    color: rgb(78, 78, 78);
-    font-size: 1.2rem;
-    font-weight: 500;
-    gap: 3rem;*/
+  padding-left: 1rem;
 }
 .slide-text {
   display: flex;
@@ -185,7 +145,6 @@
   margin-right: 4rem;
   height: 3.4rem;
   width: 100%;
-  /* background: transparent; */
   justify-content: space-between;
 }
 
@@ -200,15 +159,12 @@
   height: 3.4rem;
   border: none;
   outline: none;
-  /* background-color: grey; */
   background: transparent;
   padding-left: 1rem;
 }
 
 .header-right-section {
   display: flex;
-  /* visibility: hidden; */
-  /* position: static; */
   align-items: center;
   gap: 1rem;
 }
@@ -219,7 +175,6 @@
 
 .themes_section {
   position: relative;
-  /* right: 200px; */
   top: 60px;
   background-color: #1a73e8;
   display: none;
