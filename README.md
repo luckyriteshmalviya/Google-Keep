@@ -1,5 +1,6 @@
 # Google-Keep
 This is very helpful for creating, editing and saving notes, important links and important text for future references.  
+This project follows CRUD concept - Create, Render, Update & Delete.
 In this Project we tried to make the UI similar to the Google Keep UI.  
   
   
@@ -61,7 +62,14 @@ In this Project we tried to make the UI similar to the Google Keep UI.
 
 https://user-images.githubusercontent.com/99033374/167382116-9713964e-85ef-4382-b43a-ec45bbd720e8.mp4
 
+
+
+
  
+
+https://user-images.githubusercontent.com/99033374/178052142-27078c5b-917e-486c-be33-ba493480f4f6.mp4
+
+
    
    
 ## Feedback
