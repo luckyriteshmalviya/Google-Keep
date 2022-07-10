@@ -14,16 +14,13 @@ function onClickMenu() {
   }
 }
 
-/**IIFE function for welcome message */
-// (() => {
-//   alert("Welcome to the Google keep created by Ritesh malviya");
-// })();
-
 /** Function for saving note */
 function saveNote() {
   // Step 01
   const title = document.getElementById("notes_title");
   const description = document.getElementById("notes_description");
+  let savedTag = document.getElementById("saveTag");
+  let savedTagValue = savedTag.innerHTML;
 
   // Step 02
   if (!title) {
@@ -52,18 +49,25 @@ function saveNote() {
 
   // Step 07
   if (notes === null) {
-    notes = [{ title: titleValue, description: descriptionValue }];
+    notes = [
+      { title: titleValue, description: descriptionValue, tag: savedTagValue },
+    ];
   }
 
   // Step 08
   else {
-    notes.push({ title: titleValue, description: descriptionValue });
+    notes.push({
+      title: titleValue,
+      description: descriptionValue,
+      tag: savedTagValue,
+    });
   }
 
   // Step 09
   localStorage.setItem("notes", JSON.stringify(notes));
   title.value = "";
   description.value = "";
+  savedTag.innerHTML = "";
   return;
 }
 
@@ -76,28 +80,27 @@ function displayNotes() {
   const notesLengthForArray = notesList.length - 1;
 
   for (let i = notesLengthForArray; i >= 0; i--) {
-    const { title, description } = notesList[i];
+    const { title, description, tag } = notesList[i];
     const divContainer = document.createElement("div");
 
     divContainer.innerHTML = `<div class="savedNotes">
     <div class="savedNotesFirst">
     <textarea id="savedNotesTitle" >${title}</textarea>
-    <i class='bx bx-pin' ></i>
+    <i class='bx bx-pin' id="pinBtn"></i>
     </div>
     <textarea id="savedNotesDescription" class="${i}" >${description}</textarea>
     <div class="SavedNotesThirdSection">
     <div id="savedNotesIcon">
-    <p><i class='bx bxs-bell-plus' ></i></p>
     <p><i class='bx bx-user-plus' ></i> </p>
     <p><i class='bx bx-palette'></i> </p>
-    <p><i class='bx bx-image-alt' ></i> </p>
-    <p><i class='bx bx-archive-in' ></i> </p>
-    <p><i class='bx bx-dots-vertical-rounded' ></i> </p>
     <p><i class='bx bx-undo' ></i>  </p>
     <p><i class='bx bx-redo' ></i></p>
+    <div id='noteTag'>${tag}</div>
     </div>
-    <button class="editBtn" onClick="editNotes(${i})">EDIT</button>
-    <button class="DeleteBtn" onClick="deleteNotes(${i})" >DELETE</button>
+    <div class="editAndDeleteSection">
+    <div class="editBtn" onClick="editNotes(${i})"><i class='bx bx-edit'></i></div>
+    <div class="DeleteBtn" onClick="deleteNotes(${i})" ><i class='bx bx-trash'></i></div>
+    </div>
     </div>
     </div>`;
 
@@ -105,19 +108,17 @@ function displayNotes() {
   }
   notesContainer.appendChild(fragmentContainer);
 }
+displayNotes();
 
 /**function for edit note*/
 function editNotes(i) {
   const notes = JSON.parse(localStorage.getItem("notes"));
   const { title, description } = notes[i];
-  // console.log(title);
   let titleForEdit = document.getElementById("notes_title");
   let descriptionForEdit = document.getElementById("notes_description");
-  console.log("before", titleForEdit);
 
   titleForEdit.value = title;
   descriptionForEdit.value = description;
-  console.log("after", titleForEdit);
   deleteNotes(i);
 }
 
@@ -125,20 +126,38 @@ function editNotes(i) {
 function deleteNotes(item) {
   const notes = JSON.parse(localStorage.getItem("notes"));
   const { title, description } = notes[item];
+
   notes.splice(item, 1);
   localStorage.setItem("notes", JSON.stringify(notes));
   displayNotes();
 }
 
-/**Function for dark theme */
-function theme() {
-  const body = document.body;
-
-  body.classList.toggle("dark-body");
-  const slide_menu = document.getElementById("list_items");
-  slide_menu.classList.toggle("dark");
-}
-
 // function onClickChecklist() {
 //   document.getElementById("checklist").classList.toggle("effect");
 // }
+
+/** Speech to text Function */
+const recognition = new webkitSpeechRecognition();
+const noteDescription = document.getElementById("notes_description");
+const mic = document.getElementById("mic");
+
+recognition.continuous = true;
+
+recognition.onresult = function (event) {
+  const transcript = event.results[event.resultIndex][0].transcript;
+  noteDescription.value += transcript;
+};
+
+mic.addEventListener("mouseover", function (event) {
+  console.log("voice start");
+  recognition.start();
+});
+
+mic.addEventListener("mouseout", function (event) {
+  console.log("voice end");
+  recognition.stop();
+});
+
+// noteDescription.addEventListener("input", function () {
+//   content = $(this).val();
+// });

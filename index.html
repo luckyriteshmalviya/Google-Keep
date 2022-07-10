@@ -31,8 +31,8 @@
     <!-- main element -->
     <div class="main">
       <!--Header Starts here-->
-      <div class="header">
-        <div class="header-left-section">
+      <div class="header" id="header">
+        <div class="header-left-section" id="headerLeftSection">
           <div class="first-part">
             <div id="menu-bar">
               <div id="menu" class="close" onclick="onClickMenu() ">
@@ -63,7 +63,11 @@
 
         <div class="header-right-section">
           <div class="right-menu-first">
-            <div id="themes" class="themes" onclick="theme()">
+            <div
+              id="themes"
+              class="header-right-section-icon"
+              onclick="theme()"
+            >
               <i class="bx bxs-moon"></i>
             </div>
           </div>
@@ -76,8 +80,10 @@
               <li>Blue</li>
             </ul>
           </div>
-          <div>google apps</div>
-          <div>google accounts</div>
+          <div class="header-right-section-icon"><i class="bx bx-cog"></i></div>
+          <div class="header-right-section-icon">
+            <i class="bx bxs-grid"></i>
+          </div>
         </div>
       </div>
       <!--Header Ends here-->
@@ -88,15 +94,15 @@
         <div class="nav" id="nav">
           <ul id="side-bar">
             <li>
-              <div class="list_items">
+              <div class="list_items temporaryForHoverEffect">
                 <span class="slide-ic"><i class="bx bx-bulb"></i></span>
                 <span class="slide-text" onclick="displayNotes()">Notes</span>
               </div>
             </li>
             <li>
               <div class="list_items">
-                <span class="slide-ic"><i class="bx bx-bulb"></i></span>
-                <span class="slide-text">Remainders</span>
+                <span class="slide-ic"><i class="bx bx-bell-plus"></i></span>
+                <span class="slide-text">Reminders</span>
               </div>
             </li>
             <li>
@@ -134,7 +140,7 @@
         <!--Slide Menu ends here-->
 
         <!--Notes section starts here-->
-        <div>
+        <div id="formSection">
           <div class="form" id="form">
             <div>
               <input
@@ -153,26 +159,42 @@
               ></textarea>
             </div>
             <div class="notes-option">
-              <div id="savedNotesIcon">
-                <p><i class="bx bxs-bell-plus"></i></p>
+              <div id="savedNotesIcon" class="savedNotesIcon">
+                <p><i class="bx bx-microphone" id="mic"></i></p>
                 <p><i class="bx bx-user-plus"></i></p>
                 <p><i class="bx bx-palette"></i></p>
                 <p><i class="bx bx-image-alt"></i></p>
-                <p><i class="bx bx-archive-in"></i></p>
+                <p><i class="bx bxs-bell-plus"></i></p>
                 <p><i class="bx bx-dots-vertical-rounded"></i></p>
                 <p><i class="bx bx-undo"></i></p>
                 <p><i class="bx bx-redo"></i></p>
               </div>
-              <button class="save_notes" onclick="saveNote(), displayNotes()">
-                Save
-              </button>
+              <div class="save_notes" onclick="saveNote(), displayNotes()">
+                <i class="bx bx-save"></i>
+              </div>
+            </div>
+            <div class="tagArea">
+              <div class="tagInputArea">
+                <input
+                  type="text"
+                  class="tagInput"
+                  id="tagInput"
+                  placeholder="Add Tag..."
+                  list="TagList"
+                /><i class="bx bx-plus" id="plusIconAddTag"></i>
+                <datalist id="TagList">
+                  <option>High Priority</option>
+                  <option>Medium Priority</option>
+                  <option>Low Priority</option>
+                  <option>Create Tag Name</option>
+                </datalist>
+              </div>
+              <div id="saveTag" class="saveTag"></div>
             </div>
           </div>
 
           <div id="savedNotes">
-            <!-- Notes
-            <div>
-              
+            <!-- Notes <div>      
             </div> -->
           </div>
           <div id="editNote"></div>
@@ -270,7 +292,8 @@
       --></div>
       <!--Main Container ends here-->
     </div>
-
     <script src="assets/javascript/main.js"></script>
+    <script src="assets/javascript/Tag.js"></script>
+    <script src="assets/javascript/darkMode.js"></script>
   </body>
 </html>

@@ -3,11 +3,70 @@
   margin-left: 15rem;
   padding: 0.6rem;
   display: flex;
-  box-shadow: 1px 2px 6px 0px rgb(0 0 0 / 29%);
+  box-shadow: 6px 6px 14px 0 rgba(0, 0, 0, 0.2),
+    -8px -8px 18px 0 rgba(255, 255, 255, 0.55);
+  background: linear-gradient(
+    135deg,
+    rgba(182, 182, 182, 0.22),
+    rgba(255, 255, 255, 0.25)
+  );
   gap: 0.3rem;
   flex-direction: column;
   width: 40rem;
   border-radius: 10px;
+  border: none;
+}
+
+.darkForm .form {
+  box-shadow: 6px 6px 14px 0 rgb(0 0 0 / 20%), 3px 4px 10px 1px rgb(0 0 0 / 55%);
+  border: none;
+  background: linear-gradient(135deg, rgb(0 0 0 / 42%), rgb(93 91 91 / 65%));
+}
+
+.darkForm .notes_title,
+.darkForm .notes_description,
+.darkForm .savedNotesIcon > p,
+.darkForm .save_notes,
+.darkForm .tagInput {
+  color: #c1c1c1;
+}
+
+.darkForm .tagInputArea,
+.darkForm .tagDiv {
+  color: #c1c1c1;
+  background: transparent;
+  border: 0.5px solid rgb(109, 109, 109);
+}
+
+.darkNotes .savedNotes {
+  /* border: none; */
+  border: 0.6px solid black;
+  background-color: rgb(85 85 85);
+}
+
+.darkNotes .savedNotes:hover {
+  background-color: rgb(85 85 85);
+  box-shadow: 6px 6px 14px 0 rgb(0 0 0 / 20%), 3px 4px 10px 1px rgb(0 0 0 / 55%);
+  border: none;
+}
+
+.darkNotes #savedNotesTitle,
+.darkNotes #savedNotesDescription,
+.darkNotes #savedNotesIcon > p,
+.darkNotes .editBtn,
+.darkNotes .DeleteBtn,
+.darkNotes .tagDiv,
+.darkNotes #pinBtn {
+  color: black;
+}
+
+.darkNotes .tagDiv {
+  font-size: 0.92rem;
+  border: 1px solid rgb(55, 55, 55);
+}
+
+.darkNotes .tagDiv:hover {
+  box-shadow: 2px 2px 2px 0px black;
 }
 
 .notes_title {
@@ -28,13 +87,20 @@
 }
 
 .save_notes {
-  border-radius: 0.4rem;
-  width: 8rem;
-  height: 2rem;
-  outline: none;
-  border: none;
-  background-color: #1a73e8;
-  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.1rem;
+  width: 3rem;
+  height: 3rem;
+  margin-right: 1rem;
+  color: rgb(116, 116, 116);
+}
+
+.save_notes:hover {
+  color: black;
+  background-color: rgb(203, 203, 203);
+  border-radius: 50%;
 }
 
 .savedNotes {
@@ -44,6 +110,32 @@
   color: rgb(70, 70, 70);
   border: 2px solid rgb(216, 216, 216);
   border-radius: 0.8rem;
+}
+
+.savedNotes .editAndDeleteSection {
+  display: none;
+}
+
+.savedNotes:hover {
+  background: transparent;
+  box-shadow: 1px 2px 6px 0px rgb(0 0 0 / 29%);
+  border: none;
+}
+
+#pinBtn {
+  display: none;
+  font-size: 1.6rem;
+}
+
+.savedNotes:hover #pinBtn {
+  display: flex;
+}
+
+.savedNotes:hover .editAndDeleteSection {
+  display: flex;
+  gap: 1.6rem;
+  justify-content: center;
+  align-items: center;
 }
 
 #savedNotes {
@@ -58,30 +150,74 @@
 
 #savedNotesTitle {
   width: 80%;
-  border: none;
   font-weight: 520;
-  font-size: 1.2rem;
-
+  font-size: 1.6rem;
+  height: 2.6rem;
+  border: none;
   outline: none;
   background: transparent;
   resize: none;
 }
 
 #savedNotesDescription {
-  border: none;
   width: 90%;
   color: rgb(75, 75, 75);
-  font-size: 1rem;
+  font-size: 1.2rem;
+  border: none;
   outline: none;
   background: transparent;
   resize: none;
 }
 
 #savedNotesIcon {
+  /* border: 1px solid red; */
   display: flex;
+  align-items: center;
   gap: 1rem;
   font-size: 1.4rem;
   color: rgb(94, 94, 94);
+}
+
+.tagArea {
+  display: flex;
+  gap: 0.6rem;
+}
+
+#saveTag {
+  display: flex;
+  gap: 0.4rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tagDiv {
+  font-size: 0.8rem;
+  border-radius: 0.8rem;
+  padding: 4px 8px 4px 8px;
+  background-color: rgb(233, 233, 233);
+}
+
+.tagInputArea {
+  display: flex;
+  padding: 0px 6px 0px 6px;
+  font-size: 0.8rem;
+  justify-content: space-between;
+  align-items: center;
+  height: 2rem;
+  border-radius: 0.8rem;
+  background-color: rgb(233, 233, 233);
+}
+
+.tagInput {
+  padding-left: 6px;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+#plusIconAddTag {
+  padding-right: 4px;
+  font-size: 1.4rem;
 }
 
 #savedNotesIcon > p {
@@ -96,7 +232,7 @@
 
 #savedNotesIcon > p:hover {
   color: black;
-  background-color: rgb(233, 233, 233);
+  background-color: rgb(203, 203, 203);
   border-radius: 50%;
 }
 
@@ -105,24 +241,35 @@
   justify-content: space-between;
 }
 
-.editBtn {
-  border-radius: 0.4rem;
-  background-color: #ffc619;
-  color: rgb(73, 73, 73);
-  border: none;
+#noteTag {
+  display: flex;
+  gap: 0.3rem;
+  padding: 0px 6px 0px 6px;
+  font-size: 0.8rem;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
   height: 2rem;
-  font-weight: 600;
-  width: 6.2rem;
 }
 
+#noteTag:hover {
+  color: black;
+  padding: 0px 6px 0px 6px;
+}
+
+.editBtn,
 .DeleteBtn {
-  border-radius: 0.4rem;
-  background-color: #ff0000;
-  color: rgb(32, 32, 32);
-  border: none;
-  height: 2rem;
-  font-weight: 600;
-  width: 6.2rem;
+  display: flex;
+  font-size: 1.4rem;
+  color: rgb(94, 94, 94);
+  padding: 5px;
+}
+
+.editBtn:hover,
+.DeleteBtn:hover {
+  color: black;
+  background-color: rgb(203, 203, 203);
+  border-radius: 50%;
 }
 
 .notes-option {
