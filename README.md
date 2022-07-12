@@ -58,7 +58,8 @@ In this Project we tried to make the UI similar to the Google Keep UI.
 
 ### Dark Mode
 
-![WhatsApp Image 2022-07-11 at 1 22 20 AM](https://user-images.githubusercontent.com/99033374/178160047-4db63ef2-9515-48f1-b5d8-38b086a8b1a6.jpeg)
+
+![WhatsApp Image 2022-07-12 at 6 43 30 PM](https://user-images.githubusercontent.com/99033374/178498347-3f13d660-ceea-4f75-bfb8-5618a1498214.jpeg)
 
   
 ## Demo  
