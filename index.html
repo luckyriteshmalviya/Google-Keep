@@ -180,16 +180,16 @@
                   class="tagInput"
                   id="tagInput"
                   placeholder="Add Tag..."
-                  list="TagList"
+                  list="tagListOptions"
                 /><i class="bx bx-plus" id="plusIconAddTag"></i>
-                <datalist id="TagList">
+                <datalist id="tagListOptions">
                   <option>High Priority</option>
                   <option>Medium Priority</option>
                   <option>Low Priority</option>
                   <option>Create Tag Name</option>
                 </datalist>
               </div>
-              <div id="saveTag" class="saveTag"></div>
+              <div id="savedTag" class="savedTag"></div>
             </div>
           </div>
 
@@ -200,100 +200,18 @@
           <div id="editNote"></div>
         </div>
         <!--Notes section ends here-->
-
-        <!-- Types , Labels and colors are not displayed for future use  -->
-        <!--- <div>
-          <div class="types">
-            <div class="types_heading">Types</div>
-            <div class="types_content">
-              <div id="checklist" onclick="onClickChecklist()">
-                <button class="types_items">
-                  <div>
-                    <img class="list-ic" src="assets/images/list-ic.png" />
-                  </div>
-                  <div class="list">Lists</div>
-                </button>
-
-                <div class="checklist-content">
-                  <div class="checklist-header">Title</div>
-                  <div>
-                    <form>
-                      <input type="checkbox" /><input
-                        class="text"
-                        type="text"
-                        placeholder="Enter text here...."
-                      />
-                      <br />
-                      <input type="checkbox" /><input
-                        class="text"
-                        type="text"
-                      />
-                      <br />
-                      <input type="checkbox" /><input
-                        class="text"
-                        type="text"
-                      />
-                      <br />
-                      <input type="checkbox" /><input
-                        class="text"
-                        type="text"
-                      />
-
-                      <br />
-                    </form>
-                  </div>
-                </div>
-              </div>
-
-              <button class="types_items">
-                <div>
-                  <img class="list-ic" src="assets/images/image-ic.png" />
-                </div>
-                <div class="list">Images</div>
-              </button>
-
-              <button class="types_items">
-                <div>
-                  <img class="list-ic" src="assets/images/drawings-ic.png" />
-                </div>
-                <div class="list">Drawings</div>
-              </button>
-
-              <button class="types_items">
-                <div>
-                  <img class="list-ic" src="assets/images/url-ic.jpg" />
-                </div>
-                <div class="list">Urls</div>
-              </button>
-            </div>
-          </div>
-
-          <div class="labels">
-            <div class="labels_heading">Labels</div>
-
-            <div>
-              <button class="label_items">
-                <div>
-                  <img class="work-ic" src="assets/images/work-ic.png" />
-                </div>
-                <div class="work">Work</div>
-              </button>
-            </div>
-          </div>
-
-          <div class="color">
-            <div class="color-heading">Colors</div>
-            <div class="color-content">
-              <button class="color-items" id="first-color"></button>
-              <button class="color-items" id="second-color"></button>
-            </div>
-          </div>
-        </div>
-      --></div>
+      </div>
       <!--Main Container ends here-->
     </div>
-    <script src="assets/javascript/main.js"></script>
+    <script src="assets/javascript/speechToText.js"></script>
     <script src="assets/javascript/Tag.js"></script>
     <script src="assets/javascript/darkMode.js"></script>
+    <script src="assets/javascript/slidingMenu.js"></script>
+    <script src="assets/javascript/bookmark.js"></script>
+
+    <script src="assets/javascript/CRUD_functions/displayNote.js"></script>
+    <script src="assets/javascript/CRUD_functions/saveNote.js"></script>
+    <script src="assets/javascript/CRUD_functions/editNote.js"></script>
+    <script src="assets/javascript/CRUD_functions/deleteNote.js"></script>
   </body>
 </html>

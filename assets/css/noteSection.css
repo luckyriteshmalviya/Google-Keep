@@ -57,7 +57,7 @@
 .darkNotes .DeleteBtn,
 .darkNotes .tagDiv,
 .darkNotes #pinBtn {
-  color: black;
+  color: #dadada;
 }
 
 .darkNotes .tagDiv {
@@ -183,7 +183,7 @@
   gap: 0.6rem;
 }
 
-#saveTag {
+#savedTag {
   display: flex;
   gap: 0.4rem;
   justify-content: space-between;

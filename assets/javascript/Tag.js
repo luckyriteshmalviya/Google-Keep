@@ -1,34 +1,37 @@
-let plusIconAddTag = document.getElementById("plusIconAddTag");
-
-plusIconAddTag.addEventListener("click", addTag);
-
 /** Function for adding tag during creating the note
  *  Used only HTML Elements.
  */
+
+/**Plus Icon on tag */
+const plusIconAddTag = document.getElementById("plusIconAddTag");
+plusIconAddTag.addEventListener("click", addTag);
+
 function addTag() {
+  /**Input Value in tag written by user */
   let tagInput = document.getElementById("tagInput");
   let tagValue = tagInput.value;
+
   let tagDiv = document.createElement("div");
   tagDiv.className = "tagDiv";
-  let saveTag = document.getElementById("saveTag");
 
+  /**for adding the current tag into the saved tag before saving the Note */
+  let savedTag = document.getElementById("savedTag");
   tagDiv.innerText = tagValue;
-  saveTag.appendChild(tagDiv);
+  savedTag.appendChild(tagDiv);
 
-  let TagList = document.getElementById("TagList");
+  /**datalist of presaved tags */
+  let tagListOptions = document.getElementById("tagListOptions");
   let TagOption = document.createElement("option");
   TagOption.innerText = tagValue;
-  // for (let i = 0; i < TagList.length; i++) {
-  //   TagListValue = TagList[i].innerText;
-  //   if (TagListValue === tagValue) {
-  //     tagInput.innerText = null;
-  //     return;
-  //   }
-  // } else {
-  //   TagOption.innerText = tagValue;
-  //   console.log(TagList, "inside", TagOption);
-  //   console.log(typeof TagList, "inside", typeof TagOption);
-  // }
-  // }
-  TagList.appendChild(TagOption);
+
+  /**checking if tagValue is exist in datalist options */
+  for (let i = 0; i < tagListOptions.children.length; i++) {
+    if (tagListOptions.children[i].innerText === tagValue) {
+      tagInput.value = "";
+
+      return;
+    }
+  }
+  tagListOptions.appendChild(TagOption);
+  tagInput.value = "";
 }
