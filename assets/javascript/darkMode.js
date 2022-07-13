@@ -2,12 +2,12 @@
 
 function theme() {
   const body = document.body;
-  body.classList.toggle("dark-body");
+  body.classList.toggle("darkBody");
 
   const headerLeftSection = document.getElementById("header");
   headerLeftSection.classList.toggle("darkHeader");
 
-  const slide_menu = document.getElementById("side-bar");
+  const slide_menu = document.getElementById("sideBar");
   slide_menu.classList.toggle("darkThemeForMenu");
 
   const form = document.getElementById("formSection");
@@ -16,3 +16,5 @@ function theme() {
   const savedNotes = document.getElementById("savedNotes");
   savedNotes.classList.toggle("darkNotes");
 }
+
+export { theme };

@@ -33,7 +33,7 @@ function displayNotes() {
       <div id='noteTag'>${tag}</div>
       </div>
       <div class="editAndDeleteSection">
-      <div class="editBtn" onClick="editNotes(${i})"><i class='bx bx-edit'></i></div>
+      <div class="editBtn" id="editBtn" onClick="editNotes(${i})"><i class='bx bx-edit'></i></div>
       <div class="DeleteBtn" onClick="deleteNotes(${i})" ><i class='bx bx-trash'></i></div>
       </div>
       </div>
@@ -43,4 +43,33 @@ function displayNotes() {
   }
   notesContainer.appendChild(fragmentContainer);
 }
-displayNotes();
+
+/**Function for delete note */
+function deleteNotes(item) {
+  const notes = JSON.parse(localStorage.getItem("notes"));
+  const { title, description } = notes[item];
+
+  notes.splice(item, 1);
+  localStorage.setItem("notes", JSON.stringify(notes));
+
+  displayNotes();
+}
+
+/**function for edit note*/
+function editNotes(i) {
+  console.log("edit");
+  const notes = JSON.parse(localStorage.getItem("notes"));
+  const { title, description } = notes[i];
+  let titleForEdit = document.getElementById("notesTitle");
+  let descriptionForEdit = document.getElementById("notesDescription");
+  if (titleForEdit.value !== "") {
+    alert("Already a note is pending for editing");
+    return;
+  }
+  titleForEdit.value = title;
+  descriptionForEdit.value = description;
+  console.log("delete");
+
+  deleteNotes(i);
+  displayNotes();
+}

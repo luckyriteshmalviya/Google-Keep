@@ -1,6 +1,7 @@
 /** Speech to text Function */
+
 const recognition = new webkitSpeechRecognition();
-const noteDescription = document.getElementById("notes_description");
+const noteDescription = document.getElementById("notesDescription");
 const mic = document.getElementById("mic");
 
 recognition.continuous = true;

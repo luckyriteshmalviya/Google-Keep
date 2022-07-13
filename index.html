@@ -24,7 +24,6 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/header.css" />
     <link rel="stylesheet" href="assets/css/noteSection.css" />
-    <link rel="stylesheet" href="assets/css/typesLabelsAndColors.css" />
   </head>
 
   <body>
@@ -32,10 +31,10 @@
     <div class="main">
       <!--Header Starts here-->
       <div class="header" id="header">
-        <div class="header-left-section" id="headerLeftSection">
-          <div class="first-part">
-            <div id="menu-bar">
-              <div id="menu" class="close" onclick="onClickMenu() ">
+        <div class="headerLeftSection" id="headerLeftSection">
+          <div class="firstPart">
+            <div id="menuBar">
+              <div id="menu" class="close">
                 <div class="bar" id="bar-1"></div>
                 <div class="bar" id="bar-2"></div>
                 <div class="bar" id="bar-3"></div>
@@ -43,96 +42,87 @@
             </div>
           </div>
 
-          <div class="second-part">
+          <div class="secondPart">
             <img
-              class="second-part-image"
+              class="secondPartImage"
               src="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png"
               alt="keep"
             />
-
             <span class="keep">Keep</span>
           </div>
         </div>
 
-        <div class="header-center-section">
-          <div class="search-bar">
-            <img class="search-ic" src="assets/images/search-ic.webp" />
+        <div class="headerCenterSection">
+          <div class="searchBar">
+            <img class="searchIc" src="assets/images/search-ic.webp" />
             <input class="search" placeholder="Search" />
           </div>
         </div>
 
-        <div class="header-right-section">
-          <div class="right-menu-first">
-            <div
-              id="themes"
-              class="header-right-section-icon"
-              onclick="theme()"
-            >
+        <div class="headerRightSection">
+          <div class="rightMenuFirst">
+            <div id="themes" class="headerRightSectionIcon">
               <i class="bx bxs-moon"></i>
             </div>
           </div>
 
-          <div class="themes_section">
-            <ul>
-              <li>Black</li>
-              <li>Yellow</li>
-              <li>Red</li>
-              <li>Blue</li>
-            </ul>
-          </div>
-          <div class="header-right-section-icon"><i class="bx bx-cog"></i></div>
-          <div class="header-right-section-icon">
+          <div class="headerRightSectionIcon"><i class="bx bx-cog"></i></div>
+          <div class="headerRightSectionIcon">
             <i class="bx bxs-grid"></i>
           </div>
         </div>
       </div>
       <!--Header Ends here-->
 
-      <!--Main-Continer starts here-->
-      <div class="main-container">
+      <!--Main-Container starts here-->
+      <div class="mainContainer">
         <!--Slide Menu Starts here-->
         <div class="nav" id="nav">
-          <ul id="side-bar">
+          <ul id="sideBar">
             <li>
-              <div class="list_items temporaryForHoverEffect">
-                <span class="slide-ic"><i class="bx bx-bulb"></i></span>
-                <span class="slide-text" onclick="displayNotes()">Notes</span>
+              <div
+                class="listItems temporaryForHoverEffect"
+                id="notesButton"
+                onclick="displayNotes()"
+              >
+                <span class="slideIc"><i class="bx bx-bulb"></i></span>
+                <span class="slideText">Notes</span>
               </div>
             </li>
             <li>
-              <div class="list_items">
-                <span class="slide-ic"><i class="bx bx-bell-plus"></i></span>
-                <span class="slide-text">Reminders</span>
+              <div class="listItems">
+                <span class="slideIc"><i class="bx bx-bell-plus"></i></span>
+                <span class="slideText">Reminders</span>
               </div>
             </li>
             <li>
-              <div class="list_items">
-                <span class="slide-ic"><i class="bx bx-label"></i></span>
-                <span class="slide-text">Inspiration</span>
+              <div class="listItems">
+                <span class="slideIc"><i class="bx bx-label"></i></span>
+                <span class="slideText">Inspiration</span>
               </div>
             </li>
             <li>
-              <div class="list_items">
-                <span class="slide-ic"><i class="bx bx-label"></i></span>
-                <span class="slide-text">Personal</span>
+              <div class="listItems">
+                <span class="slideIc"><i class="bx bx-label"></i></span>
+                <span class="slideText">Personal</span>
               </div>
             </li>
             <li>
-              <div class="list_items">
-                <span class="slide-ic"><i class="bx bx-edit-alt"></i></span
-                ><span class="slide-text">Edit Labels</span>
+              <div class="listItems">
+                <span class="slideIc"><i class="bx bx-edit-alt"></i></span
+                ><span class="slideText">Edit Labels</span>
               </div>
             </li>
             <li>
-              <div class="list_items">
-                <span class="slide-ic"><i class="bx bx-archive-in"></i></span>
-                <span class="slide-text">Archive</span>
+              <div class="listItems">
+                <span class="slideIc"><i class="bx bx-archive-in"></i></span>
+                <span class="slideText">Archive</span>
               </div>
             </li>
             <li>
-              <div class="list_items">
-                <span class="slide-ic"><i class="bx bx-trash"></i></span>
-                <span class="slide-text">Trash</span>
+              <div class="listItems">
+                <span class="slideIc"><i class="bx bx-trash"></i></span>
+                <span class="slideText">Trash</span>
               </div>
             </li>
           </ul>
@@ -145,8 +135,8 @@
             <div>
               <input
                 type="text"
-                class="notes_title"
-                id="notes_title"
+                class="notesTitle"
+                id="notesTitle"
                 placeholder="Title"
               />
             </div>
@@ -154,11 +144,11 @@
             <div>
               <textarea
                 placeholder="Description..."
-                class="notes_description"
-                id="notes_description"
+                class="notesDescription"
+                id="notesDescription"
               ></textarea>
             </div>
-            <div class="notes-option">
+            <div class="notesOption">
               <div id="savedNotesIcon" class="savedNotesIcon">
                 <p><i class="bx bx-microphone" id="mic"></i></p>
                 <p><i class="bx bx-user-plus"></i></p>
@@ -169,7 +159,7 @@
                 <p><i class="bx bx-undo"></i></p>
                 <p><i class="bx bx-redo"></i></p>
               </div>
-              <div class="save_notes" onclick="saveNote(), displayNotes()">
+              <div class="saveNotes" id="saveNotes" onclick="saveNote()">
                 <i class="bx bx-save"></i>
               </div>
             </div>
@@ -203,15 +193,16 @@
       </div>
       <!--Main Container ends here-->
     </div>
+    <script type="module">
+      import { onClickMenu, theme } from "./assets/javascript/main.js";
+      document.getElementById("menu").addEventListener("click", onClickMenu);
+      document.getElementById("themes").addEventListener("click", theme);
+    </script>
+
     <script src="assets/javascript/speechToText.js"></script>
     <script src="assets/javascript/Tag.js"></script>
-    <script src="assets/javascript/darkMode.js"></script>
-    <script src="assets/javascript/slidingMenu.js"></script>
-    <script src="assets/javascript/bookmark.js"></script>
-
-    <script src="assets/javascript/CRUD_functions/displayNote.js"></script>
     <script src="assets/javascript/CRUD_functions/saveNote.js"></script>
-    <script src="assets/javascript/CRUD_functions/editNote.js"></script>
-    <script src="assets/javascript/CRUD_functions/deleteNote.js"></script>
+    <script src="assets/javascript/bookmark.js"></script>
+    <script src="assets/javascript/CRUD_functions/displayNote.js"></script>
   </body>
 </html>

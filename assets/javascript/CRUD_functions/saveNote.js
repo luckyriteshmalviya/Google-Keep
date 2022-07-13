@@ -20,9 +20,9 @@
 /** Function for saving note */
 function saveNote() {
   // Step 01
-  const title = document.getElementById("notes_title");
-  const description = document.getElementById("notes_description");
-  let savedTag = document.getElementById("saveTag");
+  const title = document.getElementById("notesTitle");
+  const description = document.getElementById("notesDescription");
+  let savedTag = document.getElementById("savedTag");
   let savedTagValue = savedTag.innerHTML;
 
   // Step 02
@@ -71,5 +71,6 @@ function saveNote() {
   title.value = "";
   description.value = "";
   savedTag.innerHTML = "";
+  displayNotes();
   return;
 }

@@ -23,10 +23,10 @@
   background: linear-gradient(135deg, rgb(0 0 0 / 42%), rgb(93 91 91 / 65%));
 }
 
-.darkForm .notes_title,
-.darkForm .notes_description,
+.darkForm .notesTitle,
+.darkForm .notesDescription,
 .darkForm .savedNotesIcon > p,
-.darkForm .save_notes,
+.darkForm .saveNotes,
 .darkForm .tagInput {
   color: #c1c1c1;
 }
@@ -69,7 +69,7 @@
   box-shadow: 2px 2px 2px 0px black;
 }
 
-.notes_title {
+.notesTitle {
   font-size: 1.6rem;
   border: none;
   width: 100%;
@@ -77,7 +77,7 @@
   background: transparent;
 }
 
-.notes_description {
+.notesDescription {
   border: none;
   font-size: 1.2rem;
   outline: none;
@@ -86,7 +86,7 @@
   width: 100%;
 }
 
-.save_notes {
+.saveNotes {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -97,7 +97,7 @@
   color: rgb(116, 116, 116);
 }
 
-.save_notes:hover {
+.saveNotes:hover {
   color: black;
   background-color: rgb(203, 203, 203);
   border-radius: 50%;
@@ -272,7 +272,7 @@
   border-radius: 50%;
 }
 
-.notes-option {
+.notesOption {
   display: flex;
   justify-content: space-between;
   align-items: center;

@@ -1,15 +1,17 @@
 /**function for slide menu of Right-side*/
 function onClickMenu() {
   document.getElementById("menu").classList.toggle("change");
-  const sidebarList = document.getElementById("side-bar");
-  const children_ic = sidebarList.querySelectorAll(".list_items");
-  const children_text = sidebarList.querySelectorAll(".slide-text");
+  const sidebarList = document.getElementById("sideBar");
+  const children_ic = sidebarList.querySelectorAll(".listItems");
+  const children_text = sidebarList.querySelectorAll(".slideText");
 
   for (let i = 0; i < children_text.length; i++) {
-    children_text[i].classList.toggle("d-none");
+    children_text[i].classList.toggle("dNone");
   }
 
   for (let i = 0; i < children_ic.length; i++) {
-    children_ic[i].classList.toggle("list_items_new");
+    children_ic[i].classList.toggle("listItemsNew");
   }
 }
+
+export { onClickMenu };

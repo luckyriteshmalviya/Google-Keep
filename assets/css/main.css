@@ -6,7 +6,7 @@ body {
   padding: 0;
 }
 
-.dark-body {
+.darkBody {
   background-color: rgb(58, 58, 58);
   color: #ffffff;
 }
@@ -15,7 +15,7 @@ body {
   background-color: solid gray;
 }
 
-.main-container {
+.mainContainer {
   display: flex;
 }
 
