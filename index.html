@@ -42,20 +42,27 @@
             </div>
           </div>
 
-          <div class="secondPart">
-            <img
-              class="secondPartImage"
-              src="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png"
-              alt="keep"
-            />
-            <span class="keep">Keep</span>
-          </div>
+          <!-- <div class="secondPart"> -->
+          <img
+            class="secondPartImage"
+            src="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png"
+            alt="keep"
+          />
+          <span class="keep">Keep</span>
+          <!-- </div> -->
         </div>
 
         <div class="headerCenterSection">
-          <div class="searchBar">
-            <img class="searchIc" src="assets/images/search-ic.webp" />
-            <input class="search" placeholder="Search" />
+          <div class="searchBar" id="searchBar">
+            <div class="searchIc">
+              <i class="bx bx-search"></i>
+            </div>
+            <input
+              class="search"
+              id="search"
+              placeholder="Search"
+              onkeyup="searchNotes()"
+            />
           </div>
         </div>
 
@@ -66,7 +73,9 @@
             </div>
           </div>
 
-          <div class="headerRightSectionIcon"><i class="bx bx-cog"></i></div>
+          <div class="headerRightSectionIcon">
+            <i class="bx bx-cog"></i>
+          </div>
           <div class="headerRightSectionIcon">
             <i class="bx bxs-grid"></i>
           </div>
@@ -75,55 +84,55 @@
       <!--Header Ends here-->
 
       <!--Main-Container starts here-->
-      <div class="mainContainer">
+      <div class="mainContainer" id="mainContainer">
         <!--Slide Menu Starts here-->
         <div class="nav" id="nav">
           <ul id="sideBar">
             <li>
-              <div
-                class="listItems temporaryForHoverEffect"
+              <button
+                class="listItems"
                 id="notesButton"
                 onclick="displayNotes()"
               >
                 <span class="slideIc"><i class="bx bx-bulb"></i></span>
                 <span class="slideText">Notes</span>
-              </div>
+              </button>
             </li>
             <li>
-              <div class="listItems">
+              <button class="listItems" id="bookmark">
+                <span class="slideIc"><i class="bx bx-pin"></i></span>
+                <span class="slideText">Bookmark</span>
+              </button>
+            </li>
+            <li>
+              <button class="listItems" id="reminder">
                 <span class="slideIc"><i class="bx bx-bell-plus"></i></span>
                 <span class="slideText">Reminders</span>
-              </div>
+              </button>
             </li>
             <li>
-              <div class="listItems">
-                <span class="slideIc"><i class="bx bx-label"></i></span>
-                <span class="slideText">Inspiration</span>
-              </div>
-            </li>
-            <li>
-              <div class="listItems">
+              <button class="listItems" id="personal">
                 <span class="slideIc"><i class="bx bx-label"></i></span>
                 <span class="slideText">Personal</span>
-              </div>
+              </button>
             </li>
             <li>
-              <div class="listItems">
+              <button class="listItems" id="editLabels">
                 <span class="slideIc"><i class="bx bx-edit-alt"></i></span
                 ><span class="slideText">Edit Labels</span>
-              </div>
+              </button>
             </li>
             <li>
-              <div class="listItems">
+              <button class="listItems" id="archive">
                 <span class="slideIc"><i class="bx bx-archive-in"></i></span>
                 <span class="slideText">Archive</span>
-              </div>
+              </button>
             </li>
             <li>
-              <div class="listItems">
+              <button class="listItems" id="trash" onclick="trash()">
                 <span class="slideIc"><i class="bx bx-trash"></i></span>
                 <span class="slideText">Trash</span>
-              </div>
+              </button>
             </li>
           </ul>
         </div>
@@ -141,7 +150,7 @@
               />
             </div>
 
-            <div>
+            <div id="notesDescriptionArea" style="height: 3rem">
               <textarea
                 placeholder="Description..."
                 class="notesDescription"
@@ -159,8 +168,17 @@
                 <p><i class="bx bx-undo"></i></p>
                 <p><i class="bx bx-redo"></i></p>
               </div>
-              <div class="saveNotes" id="saveNotes" onclick="saveNote()">
-                <i class="bx bx-save"></i>
+              <div class="discardAndSaveButton">
+                <button
+                  class="discardNotes"
+                  id="discardNotes"
+                  onclick="saveNote(true)"
+                >
+                  DISCARD
+                </button>
+                <div class="saveNotes" id="saveNotes" onclick="saveNote()">
+                  <i class="bx bx-save"></i>
+                </div>
               </div>
             </div>
             <div class="tagArea">
@@ -183,10 +201,7 @@
             </div>
           </div>
 
-          <div id="savedNotes">
-            <!-- Notes <div>      
-            </div> -->
-          </div>
+          <div id="savedNotes"></div>
           <div id="editNote"></div>
         </div>
         <!--Notes section ends here-->
@@ -194,15 +209,58 @@
       <!--Main Container ends here-->
     </div>
     <script type="module">
-      import { onClickMenu, theme } from "./assets/javascript/main.js";
+      import {
+        onClickMenu,
+        theme,
+        addTag,
+        speechToText,
+      } from "./assets/javascript/otherFunctions/main.js";
       document.getElementById("menu").addEventListener("click", onClickMenu);
       document.getElementById("themes").addEventListener("click", theme);
+
+      document
+        .getElementById("plusIconAddTag")
+        .addEventListener("click", addTag);
+
+      speechToText();
     </script>
 
-    <script src="assets/javascript/speechToText.js"></script>
-    <script src="assets/javascript/Tag.js"></script>
-    <script src="assets/javascript/CRUD_functions/saveNote.js"></script>
-    <script src="assets/javascript/bookmark.js"></script>
-    <script src="assets/javascript/CRUD_functions/displayNote.js"></script>
+    <script src="assets/javascript/CRUD_functions/createNote.js">
+      displayNotes()
+    </script>
+    <script src="assets/javascript/otherFunctions/bookmark.js"></script>
+    <script src="assets/javascript/otherFunctions/trash.js"></script>
+    <script src="assets/javascript/otherFunctions/searchBar.js"></script>
+
+    <script>
+      document.querySelector("#sideBar").addEventListener("click", (e) => {
+        let themeStatus = JSON.parse(localStorage.getItem("themeStatus"));
+
+        let listItems = document.getElementById("sideBar").children;
+        for (let i = 0; i < listItems.length; i++) {
+          listItems[i].childNodes[0].nextSibling.style.backgroundColor =
+            "transparent";
+        }
+        // console.log(themeStatus, typeof themeStatus);
+        // if (themeStatus === true) {
+        //   if (e.target.className === "listItems") {
+        //     e.target.style.backgroundColor = "#2d2d2d";
+        //   } else if (e.target.className === "slideText") {
+        //     e.path[1].style.backgroundColor = "#2d2d2d";
+        //   } else {
+        //     e.path[2].style.backgroundColor = "#2d2d2d";
+        //   }
+        // } else {
+        if (e.target.className === "listItems") {
+          e.target.style.backgroundColor = "#feefc3";
+        } else if (e.target.className === "slideText") {
+          e.path[1].style.backgroundColor = "#feefc3";
+        } else {
+          e.path[2].style.backgroundColor = "#feefc3";
+        }
+        // }
+        // e.stopPropagation();
+      });
+    </script>
   </body>
 </html>

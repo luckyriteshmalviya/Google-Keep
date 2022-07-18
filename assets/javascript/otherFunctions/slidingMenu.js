@@ -14,4 +14,9 @@ function onClickMenu() {
   }
 }
 
+// function menu() {
+//   let menu = (document.getElementById("notesButton").style.backgroundColor =
+//     "black");
+// }
+
 export { onClickMenu };

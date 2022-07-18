@@ -3,25 +3,23 @@
  */
 
 /**Plus Icon on tag */
-const plusIconAddTag = document.getElementById("plusIconAddTag");
-plusIconAddTag.addEventListener("click", addTag);
 
 function addTag() {
   /**Input Value in tag written by user */
-  let tagInput = document.getElementById("tagInput");
-  let tagValue = tagInput.value;
+  const tagInput = document.getElementById("tagInput");
+  const tagValue = tagInput.value;
 
-  let tagDiv = document.createElement("div");
+  const tagDiv = document.createElement("div");
   tagDiv.className = "tagDiv";
 
   /**for adding the current tag into the saved tag before saving the Note */
-  let savedTag = document.getElementById("savedTag");
+  const savedTag = document.getElementById("savedTag");
   tagDiv.innerText = tagValue;
   savedTag.appendChild(tagDiv);
 
   /**datalist of presaved tags */
-  let tagListOptions = document.getElementById("tagListOptions");
-  let TagOption = document.createElement("option");
+  const tagListOptions = document.getElementById("tagListOptions");
+  const TagOption = document.createElement("option");
   TagOption.innerText = tagValue;
 
   /**checking if tagValue is exist in datalist options */
@@ -35,3 +33,5 @@ function addTag() {
   tagListOptions.appendChild(TagOption);
   tagInput.value = "";
 }
+
+export { addTag };
