@@ -3,6 +3,11 @@
 let themeStatus = "";
 
 function theme() {
+  let listItems = document.getElementById("sideBar").children;
+  for (let i = 0; i < listItems.length; i++) {
+    listItems[i].childNodes[0].nextSibling.style.backgroundColor =
+      "transparent";
+  }
   // document.querySelectorAll("listItems").style.backgroundColor = "transparent";
   const body = document.body;
   body.classList.toggle("darkBody");

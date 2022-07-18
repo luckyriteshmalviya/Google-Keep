@@ -2,8 +2,10 @@ function bookmark(i) {
   const notes = JSON.parse(localStorage.getItem("notes"));
   if (notes[i].bookmarkStatus === true) {
     notes[i].bookmarkStatus = false;
+    // document.getElementById("pinBtnInDisplay").className = "bx-bookmark";
   } else {
     notes[i].bookmarkStatus = true;
+    // document.getElementById("pinBtnInDisplay").className = "bx-bookmark-star";
   }
 
   for (let i = 0; i < notes.length; i++) {
@@ -14,6 +16,7 @@ function bookmark(i) {
     }
   }
   localStorage.setItem("notes", JSON.stringify(notes));
+  displayNotes();
 }
 
 const showbookmarkedNotes = document.getElementById("bookmark");

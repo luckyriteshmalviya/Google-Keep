@@ -22,6 +22,8 @@ let activeNote = null;
 /** Function for saving note */
 function saveNote(cancel) {
   if (cancel) {
+    // console.log("discard");
+    document.getElementById("discardNotes").style.display = "none";
     clearNotes();
     displayNotes();
     return;
@@ -91,7 +93,7 @@ function saveNote(cancel) {
   displayNotes();
   activeNote = null;
   document.getElementById("discardNotes").style.display = "none";
-  console.log(document.getElementById("discardNotes"));
+  // console.log(document.getElementById("discardNotes"));
   return;
 }
 
@@ -140,6 +142,7 @@ function displayNotes() {
   }
   notesContainer.appendChild(fragmentContainer);
 }
+displayNotes();
 /**Function for delete note */
 function deleteNotes(item) {
   const notes = JSON.parse(localStorage.getItem("notes"));

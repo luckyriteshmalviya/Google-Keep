@@ -21,6 +21,7 @@
     />
 
     <!--CSS stylesheets-->
+    <link rel="stylesheet" href="assets/css/typesLabelsAndColors.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/header.css" />
     <link rel="stylesheet" href="assets/css/noteSection.css" />
@@ -92,44 +93,52 @@
               <button
                 class="listItems"
                 id="notesButton"
-                onclick="displayNotes()"
+                onclick="onClickChecklist(),displayNotes()"
               >
                 <span class="slideIc"><i class="bx bx-bulb"></i></span>
                 <span class="slideText">Notes</span>
               </button>
             </li>
             <li>
-              <button class="listItems" id="bookmark">
+              <button
+                class="listItems"
+                id="bookmark"
+                onclick="onClickChecklist()"
+              >
                 <span class="slideIc"><i class="bx bx-pin"></i></span>
                 <span class="slideText">Bookmark</span>
               </button>
             </li>
             <li>
-              <button class="listItems" id="reminder">
+              <button class="listItems" id="reminder" onclick="homePage()">
                 <span class="slideIc"><i class="bx bx-bell-plus"></i></span>
                 <span class="slideText">Reminders</span>
               </button>
             </li>
             <li>
-              <button class="listItems" id="personal">
+              <button class="listItems" id="personal" onclick="homePage()">
                 <span class="slideIc"><i class="bx bx-label"></i></span>
                 <span class="slideText">Personal</span>
               </button>
             </li>
             <li>
-              <button class="listItems" id="editLabels">
+              <button class="listItems" id="editLabels" onclick="homePage()">
                 <span class="slideIc"><i class="bx bx-edit-alt"></i></span
                 ><span class="slideText">Edit Labels</span>
               </button>
             </li>
             <li>
-              <button class="listItems" id="archive">
+              <button class="listItems" id="archive" onclick="homePage()">
                 <span class="slideIc"><i class="bx bx-archive-in"></i></span>
                 <span class="slideText">Archive</span>
               </button>
             </li>
             <li>
-              <button class="listItems" id="trash" onclick="trash()">
+              <button
+                class="listItems"
+                id="trash"
+                onclick="onClickChecklist(),trash()"
+              >
                 <span class="slideIc"><i class="bx bx-trash"></i></span>
                 <span class="slideText">Trash</span>
               </button>
@@ -138,8 +147,92 @@
         </div>
         <!--Slide Menu ends here-->
 
+        <div id="homePage">
+          <div class="types">
+            <div class="types_heading">Types</div>
+            <div class="types_content">
+              <div id="checklist" onclick="onClickChecklist()">
+                <button class="types_items">
+                  <div class="typesIcon"><i class="bx bx-list-ul"></i></div>
+                  <div class="list">Lists</div>
+                </button>
+
+                <div class="checklist-content">
+                  <div class="checklist-header">Title</div>
+                  <div>
+                    <form>
+                      <input type="checkbox" /><input
+                        class="text"
+                        type="text"
+                        placeholder="Enter text here...."
+                      />
+                      <br />
+                      <input type="checkbox" /><input
+                        class="text"
+                        type="text"
+                      />
+                      <br />
+                      <input type="checkbox" /><input
+                        class="text"
+                        type="text"
+                      />
+                      <br />
+                      <input type="checkbox" /><input
+                        class="text"
+                        type="text"
+                      />
+
+                      <br />
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+              <button class="types_items">
+                <div class="typesIcon">
+                  <i class="bx bx-images"></i>
+                </div>
+                <div class="list">Images</div>
+              </button>
+
+              <button class="types_items">
+                <div class="typesIcon">
+                  <i class="bx bx-edit-alt"></i>
+                </div>
+                <div class="list">Drawings</div>
+              </button>
+
+              <button class="types_items">
+                <div class="typesIcon">
+                  <i class="bx bx-link"></i>
+                </div>
+                <div class="list">Urls</div>
+              </button>
+            </div>
+          </div>
+
+          <div class="labels">
+            <div class="labels_heading">Labels</div>
+
+            <div>
+              <button class="label_items">
+                <div id="workIcon"><i class="bx bx-briefcase"></i></div>
+                <div class="work">Work</div>
+              </button>
+            </div>
+          </div>
+
+          <div class="color">
+            <div class="color-heading">Colors</div>
+            <div class="color-content">
+              <button class="color-items" id="first-color"></button>
+              <button class="color-items" id="second-color"></button>
+            </div>
+          </div>
+        </div>
+
         <!--Notes section starts here-->
-        <div id="formSection">
+        <div id="formSection" style="display: none">
           <div class="form" id="form">
             <div>
               <input
@@ -261,6 +354,17 @@
           }
         }
       });
+
+      function onClickChecklist() {
+        console.log("hi");
+        document.getElementById("formSection").style.display = "block";
+        document.getElementById("homePage").style.display = "none";
+      }
+
+      function homePage() {
+        document.getElementById("formSection").style.display = "none";
+        document.getElementById("homePage").style.display = "block";
+      }
     </script>
   </body>
 </html>
