@@ -373,6 +373,10 @@
     width: 16em;
   }
 
+  .SavedNotesThirdSection {
+    align-items: baseline;
+  }
+
   .tagArea,
   .savedNotesIcon,
   #savedTag {
@@ -382,7 +386,13 @@
   .savedNotesIcon {
     gap: 0;
   }
-  .savedNotes:hover .editAndDeleteSection {
+
+  .savedNotes .editAndDeleteSection {
+    display: flex;
+  }
+
+  .editAndDeleteSection {
+    display: flex;
     gap: 0.6em;
   }
 
