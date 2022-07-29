@@ -11,7 +11,7 @@ function bookmark(i) {
   for (let i = 0; i < notes.length; i++) {
     if (notes[i].bookmarkStatus === true) {
       const book = document.getElementById("pinBtnInDisplay");
-      console.log(book);
+      // console.log(book);
       // book.children.style.display = "flex";
     }
   }
@@ -50,7 +50,7 @@ function bookmarkPage() {
         </div>
         <textarea id="savedNotesDescription" class="${i}" >${description}</textarea>
         <div class="SavedNotesThirdSection">
-        <div id="savedNotesIcon">
+        <div id="savedNotesIcon"  class="savedNotesIcon">
         <p><i class='bx bx-user-plus' ></i> </p>
         <p><i class='bx bx-palette'></i> </p>
         <p><i class='bx bx-undo' ></i>  </p>

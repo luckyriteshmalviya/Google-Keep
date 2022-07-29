@@ -48,6 +48,8 @@
             class="secondPartImage"
             src="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png"
             alt="keep"
+            width="53"
+            height="50"
           />
           <span class="keep">Keep</span>
           <!-- </div> -->
@@ -74,10 +76,10 @@
             </div>
           </div>
 
-          <div class="headerRightSectionIcon">
+          <div class="headerRightSectionIcon one">
             <i class="bx bx-cog"></i>
           </div>
-          <div class="headerRightSectionIcon">
+          <div class="headerRightSectionIcon two">
             <i class="bx bxs-grid"></i>
           </div>
         </div>
@@ -147,46 +149,18 @@
         </div>
         <!--Slide Menu ends here-->
 
+        <!--Homepage Starts here-->
         <div id="homePage">
+          <!--First section of Homepage-->
           <div class="types">
             <div class="types_heading">Types</div>
             <div class="types_content">
-              <div id="checklist" onclick="onClickChecklist()">
-                <button class="types_items">
-                  <div class="typesIcon"><i class="bx bx-list-ul"></i></div>
-                  <div class="list">Lists</div>
-                </button>
-
-                <div class="checklist-content">
-                  <div class="checklist-header">Title</div>
-                  <div>
-                    <form>
-                      <input type="checkbox" /><input
-                        class="text"
-                        type="text"
-                        placeholder="Enter text here...."
-                      />
-                      <br />
-                      <input type="checkbox" /><input
-                        class="text"
-                        type="text"
-                      />
-                      <br />
-                      <input type="checkbox" /><input
-                        class="text"
-                        type="text"
-                      />
-                      <br />
-                      <input type="checkbox" /><input
-                        class="text"
-                        type="text"
-                      />
-
-                      <br />
-                    </form>
-                  </div>
+              <button class="types_items" onclick="onClickChecklist()">
+                <div class="typesIcon">
+                  <i class="bx bx-list-ul"></i>
                 </div>
-              </div>
+                <div class="list">Lists</div>
+              </button>
 
               <button class="types_items">
                 <div class="typesIcon">
@@ -211,10 +185,10 @@
             </div>
           </div>
 
+          <!--Second section of Homepage-->
           <div class="labels">
             <div class="labels_heading">Labels</div>
-
-            <div>
+            <div class="labelsContent">
               <button class="label_items">
                 <div id="workIcon"><i class="bx bx-briefcase"></i></div>
                 <div class="work">Work</div>
@@ -222,6 +196,7 @@
             </div>
           </div>
 
+          <!--Third section of Homepage-->
           <div class="color">
             <div class="color-heading">Colors</div>
             <div class="color-content">
@@ -250,16 +225,18 @@
                 id="notesDescription"
               ></textarea>
             </div>
-            <div class="notesOption">
+            <div class="notesOption" id="notesOption">
               <div id="savedNotesIcon" class="savedNotesIcon">
                 <p><i class="bx bx-microphone" id="mic"></i></p>
-                <p><i class="bx bx-user-plus"></i></p>
-                <p><i class="bx bx-palette"></i></p>
-                <p><i class="bx bx-image-alt"></i></p>
-                <p><i class="bx bxs-bell-plus"></i></p>
-                <p><i class="bx bx-dots-vertical-rounded"></i></p>
-                <p><i class="bx bx-undo"></i></p>
-                <p><i class="bx bx-redo"></i></p>
+                <p id="userIcon"><i class="bx bx-user-plus"></i></p>
+                <p id="palette"><i class="bx bx-palette"></i></p>
+                <p id="altImage"><i class="bx bx-image-alt"></i></p>
+                <p id="bell"><i class="bx bxs-bell-plus"></i></p>
+                <p id="verticalDot">
+                  <i class="bx bx-dots-vertical-rounded"></i>
+                </p>
+                <p id="undo"><i class="bx bx-undo"></i></p>
+                <p id="redo"><i class="bx bx-redo"></i></p>
               </div>
               <div class="discardAndSaveButton">
                 <button
@@ -334,12 +311,9 @@
           listItems[i].childNodes[0].nextSibling.style.backgroundColor =
             "transparent";
         }
-        // console.log(e.target.children.className);
         if (themeStatus === true) {
           if (e.target.className === "listItems") {
             e.target.style.backgroundColor = "#242424";
-            // e.target.style.boxShadow =
-            //   "6px 6px 14px 0 rgb(0 0 0 / 20%), 3px 4px 10px 1px rgb(0 0 0 / 55%)";
           } else if (e.target.className === "slideText") {
             e.path[1].style.backgroundColor = "#242424";
           } else {
@@ -357,7 +331,7 @@
       });
 
       function onClickChecklist() {
-        console.log("hi");
+        // console.log("hi");
         document.getElementById("formSection").style.display = "block";
         document.getElementById("homePage").style.display = "none";
       }

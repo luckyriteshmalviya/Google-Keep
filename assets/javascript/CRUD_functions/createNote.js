@@ -26,6 +26,8 @@ function saveNote(cancel) {
     document.getElementById("discardNotes").style.display = "none";
     clearNotes();
     displayNotes();
+    document.getElementById("notesOption").style.gap = "9.3em";
+    document.getElementById("savedTag").innerHTML = "";
     return;
   }
   if (activeNote !== null) {
@@ -90,6 +92,8 @@ function saveNote(cancel) {
   title.value = "";
   description.value = "";
   savedTag.innerHTML = "";
+  document.getElementById("notesOption").style.gap = "9.3em";
+
   displayNotes();
   activeNote = null;
   document.getElementById("discardNotes").style.display = "none";
@@ -124,7 +128,7 @@ function displayNotes() {
       <textarea id="savedNotesTitle" >${title}</textarea><i class='bx ${bookmarkClass}'  id="pinBtnInDisplay" onClick="bookmark(${i})"></i></div>
       <textarea id="savedNotesDescription" class="${i}" >${description}</textarea>
       <div class="SavedNotesThirdSection">
-      <div id="savedNotesIcon">
+      <div id="savedNotesIcon" class="savedNotesIcon">
       <p><i class='bx bx-user-plus' ></i> </p>
       <p><i class='bx bx-palette'></i> </p>
       <p><i class='bx bx-undo' ></i>  </p>
@@ -192,6 +196,7 @@ function editNotes(i) {
   descriptionForEdit.value = description;
   tagForEdit.innerHTML = tag;
   activeNote = i;
+  document.getElementById("notesOption").style.gap = "1.8em";
   document.getElementById("discardNotes").style.display = "flex";
   displayNotes();
 }

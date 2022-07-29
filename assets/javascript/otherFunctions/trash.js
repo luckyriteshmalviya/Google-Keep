@@ -3,6 +3,8 @@ function trash() {
   const form = document.getElementById("savedNotes");
   form.innerHTML = "";
   let trash = [];
+
+  // document.getElementById("mainContainer").style.gap = "8em";
   trash = JSON.parse(localStorage.getItem("trash")) || [];
 
   const fragmentContainer = document.createDocumentFragment();
@@ -12,14 +14,14 @@ function trash() {
     const { title, description, tag, bookmarkStatus } = trash[i];
     const divContainer = document.createElement("div");
 
-    divContainer.innerHTML = `<div class="savedNotes">
+    divContainer.innerHTML = `<div class="savedNotes" id="trashNotes"> 
           <div class="savedNotesFirst">
           <textarea id="savedNotesTitle" >${title}</textarea>
           <i class='bx bx-bookmark' id="pinBtn" onClick="bookmark(${i})"></i>
           </div>
           <textarea id="savedNotesDescription" class="${i}" >${description}</textarea>
           <div class="SavedNotesThirdSection">
-          <div id="savedNotesIcon">
+          <div id="savedNotesIcon"  class="savedNotesIcon" >
           <p><i class='bx bx-user-plus' ></i> </p>
           <p><i class='bx bx-palette'></i> </p>
           <p><i class='bx bx-undo' ></i>  </p>
@@ -33,6 +35,7 @@ function trash() {
           </div>
           </div>`;
 
+    // document.getElementById("trashNotes").style.width = "22.3rem";
     fragmentContainer.appendChild(divContainer);
   }
   form.appendChild(fragmentContainer);

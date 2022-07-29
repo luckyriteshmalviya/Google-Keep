@@ -17,6 +17,8 @@ body {
 
 .mainContainer {
   display: flex;
+  gap: 17.8em;
+  /* justify-content: space-evenly; */
 }
 
 p,
@@ -38,6 +40,29 @@ a {
 @media only screen and (max-width: 420px) {
   .mainContainer {
     display: flex;
-    justify-content: center;
+    gap: 1em;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 421px) and (max-width: 780px) {
+  .mainContainer {
+    display: flex;
+    gap: 3em;
+  }
+}
+
+@media (min-width: 781px) and (max-width: 1200px) {
+  .mainContainer {
+    display: flex;
+    gap: 5rem;
+    /* justify-content: space-between; */
+  }
+}
+
+@media (min-width: 1201px) and (max-width: 1400px) {
+  .mainContainer {
+    display: flex;
+    /* gap: 7em; */
   }
 }

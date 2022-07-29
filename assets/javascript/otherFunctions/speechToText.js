@@ -13,12 +13,12 @@ function speechToText() {
   };
 
   mic.addEventListener("mouseover", function (event) {
-    console.log("voice start");
+    // console.log("voice start");
     recognition.start();
   });
 
   mic.addEventListener("mouseout", function (event) {
-    console.log("voice end");
+    // console.log("voice end");
     recognition.stop();
   });
 }

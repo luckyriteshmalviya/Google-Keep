@@ -1,19 +1,14 @@
 .form {
   margin-top: 2rem;
-  margin-left: 15rem;
+  /* margin-left: 15rem; */
   padding: 0.6rem;
   background-color: rgba(240, 240, 240);
   display: flex;
   box-shadow: 0.375rem 0.375rem 0.875rem 0 rgba(0, 0, 0, 0.2),
     -0.5rem -0.5rem 10.5rem 0 rgba(255, 255, 255, 0.55);
-  /* background: linear-gradient(
-    135deg,
-    rgba(182, 182, 182, 0.22),
-    rgba(126, 126, 126, 0.25)
-  ); */
   gap: 0.3rem;
   flex-direction: column;
-  width: 40.3rem;
+  /* width: 40.3rem; */
   border-radius: 0.625rem;
   border: none;
 }
@@ -23,7 +18,6 @@
   box-shadow: 0.375rem 0.375rem 0.875rem 0 rgb(0 0 0 / 20%),
     0.1875rem 0.25rem 0.625rem 0.0625rem rgb(0 0 0 / 55%);
   border: none;
-  /* background: linear-gradient(135deg, rgb(0 0 0 / 42%), rgb(93 91 91 / 65%)); */
 }
 
 .darkForm .notesTitle,
@@ -48,30 +42,24 @@
   color: #a2a2a2;
   border: none;
   background-color: #242424;
-  /* background: transparent; */
-  /* border: 0.03125rem solid rgb(109, 109, 109); */
 }
 
 .darkNotes .savedNotes {
   box-shadow: 0.375rem 0.375rem 0.875rem 0 rgb(0 0 0 / 20%),
     0.1875rem 0.25rem 0.625rem 0.0625rem rgb(0 0 0 / 55%);
   border: none;
-  /* border: none; */
-  /* border: 0.0675rem solid black; */
   background-color: rgb(85 85 85);
 }
 
 .darkNotes .savedNotes:hover {
   background-color: rgb(85 85 85);
-  /* box-shadow: 0.375rem 0.375rem 0.875rem 0 rgb(0 0 0 / 20%),
-    0.1875rem 0.25rem 0.625rem 0.0625rem rgb(0 0 0 / 55%); */
   box-shadow: 0px 0px 0px 0px;
   border: 0.0675rem solid rgb(50, 50, 50);
 }
 
 .darkNotes #savedNotesTitle,
 .darkNotes #savedNotesDescription,
-.darkNotes #savedNotesIcon > p,
+.darkNotes .savedNotesIcon > p,
 .darkNotes .editBtn,
 .darkNotes .DeleteBtn {
   color: #dadada;
@@ -82,7 +70,6 @@
   background-color: #3c3c3c;
   font-size: 0.92rem;
   border: none;
-  /* border: 0.0625rem solid rgb(55, 55, 55); */
 }
 
 .darkNotes .tagDiv:hover {
@@ -113,7 +100,6 @@
 .discardAndSaveButton {
   display: flex;
   align-items: center;
-  /* gap: 2rem; */
 }
 
 .saveNotes {
@@ -132,7 +118,6 @@
   display: none;
   outline: none;
   height: 2rem;
-  /* box-shadow: 0.125rem 0.125rem 0.125rem 0px black; */
   border-radius: 0.56rem;
   background-color: rgb(219, 219, 219);
   justify-content: center;
@@ -158,10 +143,9 @@
 }
 
 .savedNotes {
-  width: 39.4rem;
+  /* width: 39.4rem; */
   padding: 1rem;
-  /* margin-top: 0.1rem; */
-  margin-left: 15rem;
+  /* margin-left: 15rem; */
   box-shadow: 3px 2px 6px 0 rgb(0 0 0 / 29%);
 
   color: rgb(70, 70, 70);
@@ -176,12 +160,9 @@
 .savedNotes:hover {
   background: transparent;
   box-shadow: 0px 0px 0px 0px;
-  /* box-shadow: 0.0625rem 0.125rem 0.375rem 0 rgb(0 0 0 / 29%); */
-  /* border: none; */
 }
 
 #pinBtn {
-  /* display: none; */
   font-size: 1.6rem;
 }
 #pinBtnInDisplay {
@@ -205,7 +186,6 @@
 }
 
 .savedNotes:hover ::-webkit-scrollbar-track {
-  /* background-color: blue; */
   background-color: rgb(224, 224, 224);
 }
 
@@ -247,8 +227,7 @@
   resize: none;
 }
 
-#savedNotesIcon {
-  /* border: 0.0625rem solid red; */
+.savedNotesIcon {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -258,6 +237,7 @@
 
 .tagArea {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.6rem;
 }
 
@@ -273,6 +253,10 @@
   border-radius: 0.8rem;
   padding: 0.25rem 0.5rem 0.25rem 0.5rem;
   background-color: rgb(219, 219, 219);
+}
+
+#trashNotes {
+  width: 37em;
 }
 
 .tagInputArea {
@@ -298,7 +282,7 @@
   font-size: 1.4rem;
 }
 
-#savedNotesIcon > p {
+.savedNotesIcon > p {
   width: 2.2rem;
   height: 2.2rem;
   margin-top: 0rem;
@@ -308,7 +292,7 @@
   align-items: center;
 }
 
-#savedNotesIcon > p:hover {
+.savedNotesIcon > p:hover {
   color: black;
   background-color: rgb(203, 203, 203);
   border-radius: 50%;
@@ -331,7 +315,7 @@
   justify-content: space-between;
   align-items: center;
   background: transparent;
-  height: 2rem;
+  /* height: 2rem; */
 }
 
 #noteTag:hover {
@@ -358,6 +342,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 9.3em;
 }
 
 ::-webkit-scrollbar {
@@ -371,8 +356,6 @@
 ::-webkit-scrollbar-thumb {
   background-color: #d6dee1;
   border-radius: 1rem;
-  /* border: 0.0625rem solid black; */
-  /* background-clip: content-box; */
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -383,107 +366,87 @@
 
 @media only screen and (max-width: 420px) {
   .form {
-    margin-top: 1rem;
-    margin-left: 1rem;
-    padding: 1rem;
-    gap: 0.5rem;
-    /* margin-right: 5rem; */
-    min-width: none;
-    max-width: 12rem;
+    margin-top: 1em;
   }
 
-  .notesTitle {
-    font-size: 1.2rem;
+  #trashNotes {
+    width: 16em;
   }
 
-  #notesDescriptionArea {
-    height: 3rem;
-  }
-
-  .notesDescription {
-    min-height: 1.4rem;
-    padding-top: 0rem;
-    font-size: 1rem;
-  }
-
-  .saveNotes {
-    font-size: 1rem;
-    width: 1.2rem;
-    height: 1.4rem;
-    margin-right: 0rem;
-  }
-
-  .discardNotes {
-    font-size: 1rem;
-    /* width: 1.2rem; */
-    /* height: 1.4rem; */
-    margin-right: 0rem;
-  }
-
-  .savedNotes {
-    margin-left: 1rem;
-  }
-
-  #pinBtn {
-    font-size: 1rem;
-  }
-
-  .savedNotes:hover .editAndDeleteSection {
-    gap: 1rem;
-  }
-
-  .savedNotesFirst {
-    font-size: 1rem;
-  }
-
-  #savedNotesTitle {
-    font-size: 1.2rem;
-  }
-
-  .tagArea {
-    gap: 0.1rem;
-  }
-
+  .tagArea,
+  .savedNotesIcon,
   #savedTag {
-    display: flex;
-    gap: 0.1rem;
+    flex-wrap: wrap;
   }
 
-  .tagDiv {
-    padding: 0rem 0rem 0rem 0rem;
+  .savedNotesIcon {
+    gap: 0;
   }
-
-  .tagInputArea {
-    padding: 0px 0rem 0px 0rem;
-    height: 1.4rem;
-  }
-
-  .tagInput {
-    padding-left: 0.375rem;
-  }
-
-  #savedNotesIcon > p {
-    width: 1rem;
-    height: 1rem;
-    margin-top: 0rem;
-  }
-
-  .SavedNotesThirdSection {
-    display: none;
+  .savedNotes:hover .editAndDeleteSection {
+    gap: 0.6em;
   }
 
   #noteTag {
-    gap: 0.16rem;
-    padding: 0px 0rem 0px 0rem;
-    height: 1.4rem;
+    flex-wrap: wrap;
   }
 
-  .savedNotes {
-    min-width: 4rem;
-    max-width: 14rem;
+  #formSection {
+    margin: 0 2em 0 3em;
   }
 
-  .notesOption {
+  #bell,
+  #altImage,
+  #verticalDot,
+  #undo,
+  #redo,
+  #userIcon,
+  #palette {
     display: none;
   }
+}
+
+@media (min-width: 421px) and (max-width: 780px) {
+  #savedNotesIcon {
+    gap: 0.2em;
+  }
+  .notesOption {
+    gap: 1em;
+  }
+
+  #trashNotes {
+    min-width: 19em;
+    max-width: 25em;
+  }
+
+  #formSection {
+    margin-right: 3em;
+  }
+
+  #bell,
+  #altImage,
+  #verticalDot,
+  #undo,
+  #redo {
+    display: none;
+  }
+}
+
+@media (min-width: 781px) and (max-width: 1200px) {
+  .notesOption {
+    gap: 2em;
+  }
+
+  #trashNotes {
+    width: 35em;
+  }
+
+  /* #bell,
+  #altImage,
+  #verticalDot {
+    display: none;
+  }
+
+  #savedNotesIcon {
+    gap: 0.4em;
+  } */
 }

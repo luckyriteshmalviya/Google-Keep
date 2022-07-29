@@ -30,7 +30,7 @@ function searchNotes() {
       </div>
       <textarea id="savedNotesDescription" class="${i}" >${description}</textarea>
       <div class="SavedNotesThirdSection">
-      <div id="savedNotesIcon">
+      <div id="savedNotesIcon"  class="savedNotesIcon">
       <p><i class='bx bx-user-plus' ></i> </p>
       <p><i class='bx bx-palette'></i> </p>
       <p><i class='bx bx-undo' ></i>  </p>
