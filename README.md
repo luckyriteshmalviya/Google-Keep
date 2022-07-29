@@ -72,6 +72,8 @@ Here I use Agile Technique of Design So I divide the scope of work in different 
 ### Version -1  
 https://user-images.githubusercontent.com/99033374/178052142-27078c5b-917e-486c-be33-ba493480f4f6.mp4
 
+### Version -2
+https://user-images.githubusercontent.com/99033374/181845015-396b43a7-04be-4a48-abb1-fa4ee6853f54.mp4
 
 
 
