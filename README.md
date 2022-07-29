@@ -1,10 +1,11 @@
-# Google-Keep
+# Notes App
 This is very helpful for creating, editing and saving notes, important links and important text for future references.  
 This project follows CRUD concept - Create, Render, Update & Delete.
 In this Project we tried to make the UI similar to the Google Keep UI.  
 Here I use Agile Technique of Design So I divide the scope of work in different versin like- In first version I made only the basic CRUD Function where user can CREATE, READ, UPDATE, DELETE Notes and then in second version I added some more features like adding Tags, Bookmark, keeping the deleted note in Trash, Speech to text conversion features, dark theme and many more things.
   
-  
+  ## Link:-
+  https://ritesh-notes.netlify.app/
 
   ## Requirement Analysis
   
