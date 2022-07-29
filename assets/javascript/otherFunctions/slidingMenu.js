@@ -15,19 +15,19 @@ function onClickMenu() {
 }
 
 let screenSize = screen.width;
-console.log(screenSize);
+// console.log(screenSize);
 let check = "no";
 if (screenSize < 420) {
   let nav = document.getElementById("sideBar");
   nav.style.display = "none";
-  console.log("if cond");
+  // console.log("if cond");
   let menu = document.getElementById("menu");
-  console.log(nav);
+  // console.log(nav);
   menu.onclick = displayNav;
 }
 
 function displayNav() {
-  console.log(check);
+  // console.log(check);
   if ((check = "no")) {
     check = "yes";
     nav.style.display = "block";

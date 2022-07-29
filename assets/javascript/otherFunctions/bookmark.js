@@ -29,7 +29,7 @@ function bookmarkPage() {
 
   const form = document.getElementById("savedNotes");
   form.innerHTML = null;
-  const notes = JSON.parse(localStorage.getItem("notes"));
+  const notes = JSON.parse(localStorage.getItem("notes")) || [];
 
   for (let i = 0; i < notes.length; i++) {
     const notesContainer = document.getElementById("savedNotes");
