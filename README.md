@@ -1,8 +1,9 @@
 # Notes App
 This application is extremely useful for creating, editing, and saving notes, important links, and important text for future reference.
-This project incorporates the CRUD concept, which stands for Creating, Rendering, Updating, and Deleting Notes.   
+This project incorporates the **CRUD operation**, which stands for Creating, Rendering, Updating, and Deleting Notes.   
 In this Project I take the reference from Google Keep UI.       
-Here I use Agile Technique of Design So I divide the scope of work in different version like- In first version I work on only the basic CRUD Function where user can CREATE, READ, UPDATE, DELETE Notes and then in second version I added some more features like adding Tags, Bookmark, keeping the deleted note in Trash, Speech to text conversion features, dark theme and many more things.
+Here I use Agile Technique of Design So I divide the scope of work in different version like- In first version I work on only the basic CRUD Function where user can CREATE, READ, UPDATE, DELETE Notes and then in second version I added some more features like adding Tags, Bookmark, keeping the deleted note in Trash, Speech to text conversion features, dark theme and many more things. I used **local storage** for storing the data.
+
   
   ## Link:-
   https://ritesh-notes.netlify.app/
